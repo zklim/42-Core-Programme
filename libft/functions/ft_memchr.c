@@ -1,34 +1,40 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_memchr.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 18:31:17 by zhlim             #+#    #+#             */
-/*   Updated: 2022/10/04 18:09:03 by zhlim            ###   ########.fr       */
+/*   Created: 2022/10/04 18:51:02 by zhlim             #+#    #+#             */
+/*   Updated: 2022/10/04 19:22:05 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
-char	*ft_strchr(const char *s, int c)
+//memchr does not terminate with NULL.
+//so it requires length to terminate.
+void	*ft_memchr(const void *s, int c, size_t n)
 {
-	while (*s)
+	char	*str;
+
+	str = (char *)s;
+	while (n)
 	{
-		if (*s == c)
-			return ((char *)s);
-		s++;
+		if (*str == c)
+			return (str);
+		str++;
+		n--;
 	}
 	return (NULL);
 }
 
 /*int	main(void)
 {
-	char a[] = "HelloWorld!";
-	char *b;
+	char	a[] = "HelloWorld!";
+	char	*b;
 
-	b = ft_strchr(a, 'o');
-	printf("%s\n", b);
+	b = ft_memchr(a, 'r', 8);
+	printf("%s\n%s\n", b, a);
 }*/

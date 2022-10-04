@@ -1,34 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strchr.c                                        :+:      :+:    :+:   */
+/*   ft_strncmp.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 18:31:17 by zhlim             #+#    #+#             */
-/*   Updated: 2022/10/04 18:09:03 by zhlim            ###   ########.fr       */
+/*   Created: 2022/10/04 18:24:42 by zhlim             #+#    #+#             */
+/*   Updated: 2022/10/04 18:31:58 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
-char	*ft_strchr(const char *s, int c)
+int	ft_strncmp(const char *s1, const char *s2, size_t n)
 {
-	while (*s)
-	{
-		if (*s == c)
-			return ((char *)s);
-		s++;
-	}
-	return (NULL);
+	size_t	i;
+
+	i = 0;
+	while (s1[i] == s2[i] && s1[i] && s2[i] && i < n)
+		i++;
+	if (i < n)
+		return (s1[i] - s2[i]);
+	else
+		return (0);
 }
 
-/*int	main(void)
+/* int main(void)
 {
-	char a[] = "HelloWorld!";
-	char *b;
+	char	a[];
+	char	b[];
 
-	b = ft_strchr(a, 'o');
-	printf("%s\n", b);
+	a[] = "Hello";
+	b[] = "Helio";
+	printf("%d\n", strncmp(a, b, 4));
 }*/
