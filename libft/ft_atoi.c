@@ -1,28 +1,44 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memset.c                                        :+:      :+:    :+:   */
+/*   ft_atoi.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/03 14:59:33 by zhlim             #+#    #+#             */
-/*   Updated: 2022/10/04 23:17:00 by zhlim            ###   ########.fr       */
+/*   Created: 2022/10/05 13:36:26 by zhlim             #+#    #+#             */
+/*   Updated: 2022/10/05 13:41:33 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <string.h>
+#include <stdio.h>
+#include <stdlib.h>
 
-void	*ft_memset(void *b, int c, size_t len)
+int	ft_atoi(const char *str)
 {
-	size_t	i;
-	char	*a;
+	int	sign;
+	int	res;
+	int	i;
 
+	sign = 1;
+	res = 0;
 	i = 0;
-	a = b;
-	while (i < len)
+	while (str[i] == ' ' || (str[i] >= 9 && str[i] <= 13))
+		i++;
+	if (str[i] == '+' || str[i] == '-')
 	{
-		a[i] = c;
+		if (str[i] == '-')
+			sign *= -1;
 		i++;
 	}
-	return (a);
+	while (str[i] >= '0' && str[i] <= '9')
+	{
+		res = (res * 10) + (str[i] - '0');
+		i++;
+	}
+	return (res * sign);
 }
+
+/*int	main(void)
+{
+    printf("%d\n", ft_atoi("  -1231a42"));
+}*/

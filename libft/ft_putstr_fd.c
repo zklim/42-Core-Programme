@@ -1,40 +1,22 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_memchr.c                                        :+:      :+:    :+:   */
+/*   ft_putstr_fd.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/04 18:51:02 by zhlim             #+#    #+#             */
-/*   Updated: 2022/10/04 23:16:54 by zhlim            ###   ########.fr       */
+/*   Created: 2022/10/05 17:58:48 by zhlim             #+#    #+#             */
+/*   Updated: 2022/10/05 17:58:49 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <stdio.h>
-#include <string.h>
+#include <unistd.h>
 
-//memchr does not terminate with NULL.
-//so it requires length to terminate.
-void	*ft_memchr(const void *s, int c, size_t n)
+void	ft_putstr_fd(char const *s, int fd)
 {
-	char	*str;
-
-	str = (char *)s;
-	while (n)
+	while (*s)
 	{
-		if (*str == c)
-			return (str);
-		str++;
-		n--;
+		write(fd, s, 1);
+		s++;
 	}
-	return (NULL);
 }
-
-/*int	main(void)
-{
-	char	a[] = "HelloWorld!";
-	char	*b;
-
-	b = ft_memchr(a, 'r', 8);
-	printf("%s\n%s\n", b, a);
-}*/

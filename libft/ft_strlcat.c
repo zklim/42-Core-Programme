@@ -6,14 +6,14 @@
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 17:12:46 by zhlim             #+#    #+#             */
-/*   Updated: 2022/10/04 23:17:07 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/10/05 16:32:55 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
-size_t	ft_strlen(const char *str)
+static size_t	ft_strlen(const char *str)
 {
 	size_t	i;
 
