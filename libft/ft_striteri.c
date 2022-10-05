@@ -6,32 +6,17 @@
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 17:54:00 by zhlim             #+#    #+#             */
-/*   Updated: 2022/10/05 17:54:01 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/10/06 00:32:39 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-static int	ft_strlen(char const *s)
-{
-	int	count;
-
-	count = 0;
-	while (*s)
-	{
-		count++;
-		s++;
-	}
-	return (count);
-}
-
 void	ft_striteri(char *s, void (*f)(unsigned int, char *))
 {
-	int	count;
 	int	i;
 
 	i = 0;
-	count = ft_strlen(s);
 	while (s[i])
 	{
 		(*f)(i, &s[i]);

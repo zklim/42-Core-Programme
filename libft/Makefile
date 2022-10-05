@@ -1,5 +1,5 @@
 
-SRCS		= ft_*.c
+SRCS		= ${wildcard ft_*.c}
 
 OBJS		= ${SRCS:.c=.o}
 
