@@ -1,39 +1,37 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstsize.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 18:07:24 by zhlim             #+#    #+#             */
-/*   Updated: 2022/10/06 12:31:44 by zhlim            ###   ########.fr       */
+/*   Created: 2022/10/06 17:51:56 by zhlim             #+#    #+#             */
+/*   Updated: 2022/10/06 17:56:26 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
 
-void	ft_putnbr_fd(int n, int fd)
+int	ft_lstsize(t_list *lst)
 {
-	if (n == 1 << 31)
+	int	count;
+
+	count = 0;
+	while (lst)
 	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putchar_fd('8', fd);
+		lst = lst->next;
+		count++;
 	}
-	else if (n < 0)
-	{
-		ft_putchar_fd('-', fd);
-		ft_putnbr_fd(-n, fd);
-	}
-	else
-	{
-		if (n > 9)
-			ft_putnbr_fd(n / 10, fd);
-		ft_putchar_fd('0' + (n % 10), fd);
-	}
+	return (count);
 }
 
-/*int	main(void)
+/*int main(void)
 {
-	ft_putnbr_fd(0x80000000, 1);
+    t_list a;
+    t_list b;
+    t_list c;
+
+    a.next = &b;
+    b.next = &c;
+    printf("%d\n", ft_lstsize(&a));
 }*/

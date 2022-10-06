@@ -1,39 +1,34 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_putnbr_fd.c                                     :+:      :+:    :+:   */
+/*   ft_lstnew.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/05 18:07:24 by zhlim             #+#    #+#             */
-/*   Updated: 2022/10/06 12:31:44 by zhlim            ###   ########.fr       */
+/*   Created: 2022/10/06 14:55:50 by zhlim             #+#    #+#             */
+/*   Updated: 2022/10/06 16:59:17 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
 #include "libft.h"
+#include <stdlib.h>
 
-void	ft_putnbr_fd(int n, int fd)
+t_list	*ft_lstnew(void *content)
 {
-	if (n == 1 << 31)
-	{
-		ft_putnbr_fd(n / 10, fd);
-		ft_putchar_fd('8', fd);
-	}
-	else if (n < 0)
-	{
-		ft_putchar_fd('-', fd);
-		ft_putnbr_fd(-n, fd);
-	}
-	else
-	{
-		if (n > 9)
-			ft_putnbr_fd(n / 10, fd);
-		ft_putchar_fd('0' + (n % 10), fd);
-	}
+	t_list	*new_node;
+
+	new_node = (t_list *)malloc(sizeof(t_list));
+	if (!new_node)
+		return (NULL);
+	new_node->content = ft_strdup(content);
+	new_node->next = NULL;
+	return (new_node);
 }
 
-/*int	main(void)
+/*int main(void)
 {
-	ft_putnbr_fd(0x80000000, 1);
+    t_list *a;
+    
+    a = ft_lstnew("hello");
+    printf("%s\n%p\n", a->content, a->next);
 }*/
