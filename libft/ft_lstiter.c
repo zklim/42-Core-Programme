@@ -1,34 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstlast.c                                       :+:      :+:    :+:   */
+/*   ft_lstiter.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 17:56:09 by zhlim             #+#    #+#             */
-/*   Updated: 2022/10/06 18:00:26 by zhlim            ###   ########.fr       */
+/*   Created: 2022/10/07 16:55:48 by zhlim             #+#    #+#             */
+/*   Updated: 2022/10/10 08:47:26 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-t_list	*ft_lstlast(t_list *lst)
+void	ft_lstiter(t_list *lst, void (*f)(void *))
 {
-    while (lst->next)
-        lst = lst->next;
-    return (lst);
+	while (lst && f)
+	{
+		(f)(lst->content);
+		lst = lst->next;
+	}
 }
-
-/*int main(void)
-{
-    t_list  a;
-    t_list  b;
-    t_list  c;
-    t_list  *d;
-
-    a.next = &b;
-    b.next = &c;
-    c.content = "last";
-    d = ft_lstlast(&a);
-    printf("%s\n", d->content);
-}*/

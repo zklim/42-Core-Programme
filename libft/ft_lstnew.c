@@ -6,7 +6,7 @@
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 14:55:50 by zhlim             #+#    #+#             */
-/*   Updated: 2022/10/06 16:59:17 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/10/10 08:48:05 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,14 +15,17 @@
 
 t_list	*ft_lstnew(void *content)
 {
-	t_list	*new_node;
+	t_list	*new;
 
-	new_node = (t_list *)malloc(sizeof(t_list));
-	if (!new_node)
-		return (NULL);
-	new_node->content = ft_strdup(content);
-	new_node->next = NULL;
-	return (new_node);
+	if (content)
+	{
+		new = (t_list *)malloc(sizeof(*new));
+		if (!new)
+			return (NULL);
+		new->content = content;
+		new->next = NULL;
+		return (new);
+	}
 }
 
 /*int main(void)
@@ -30,5 +33,5 @@ t_list	*ft_lstnew(void *content)
     t_list *a;
     
     a = ft_lstnew("hello");
-    printf("%s\n%p\n", a->content, a->next);
+    printf("%s\n%p\n", (char *)a->content, a->next);
 }*/

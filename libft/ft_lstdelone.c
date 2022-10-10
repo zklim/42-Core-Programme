@@ -1,39 +1,47 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd_back.c                                   :+:      :+:    :+:   */
+/*   ft_lstdelone.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/06 18:01:00 by zhlim             #+#    #+#             */
-/*   Updated: 2022/10/06 18:26:56 by zhlim            ###   ########.fr       */
+/*   Created: 2022/10/06 18:27:21 by zhlim             #+#    #+#             */
+/*   Updated: 2022/10/10 08:47:19 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
+#include <stdlib.h>
 
-void ft_lstadd_back(t_list **lst, t_list *new)
+void	ft_lstdelone(t_list *lst, void (*del)(void *))
 {
-    t_list  *tmp;
-
-    tmp = *lst;
-    while (tmp->next)
-        tmp = tmp->next;
-    tmp->next = new;
+	if (lst && del)
+	{
+		(del)(lst->content);
+		free(lst);
+	}
 }
 
-/*int main(void)
+/*void	del(void *p)
 {
-    t_list  a;
-    t_list  b;
-    t_list  c;
-    t_list  d;
-    t_list  *ptr;
+	char	*ptr;
 
-    a.next = &b;
-    b.next = &c;
-    d.content = "last";
-    ptr = &a;
-    ft_lstadd_back(&ptr, &d);
-    printf("%s\n", ptr->next->next->next->content);
+	ptr = p;
+	while (*ptr)
+	{
+		*ptr = '1';
+		ptr++;
+	}
+}
+
+int	main(void)
+{
+	t_list a;
+	char	b[] = "hello";
+
+	a.content = b;
+
+	printf("%s\n", (char *)a.content);
+	ft_lstdelone(&a, del);
+	printf("%s\n", (char *)a.content);
 }*/
