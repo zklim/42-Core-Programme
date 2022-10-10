@@ -6,7 +6,7 @@
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 13:36:26 by zhlim             #+#    #+#             */
-/*   Updated: 2022/10/05 13:41:33 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/10/10 17:12:53 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -40,5 +40,5 @@ int	ft_atoi(const char *str)
 
 /*int	main(void)
 {
-    printf("%d\n", ft_atoi("  -1231a42"));
+    printf("%ld\n", ft_atoi("  -2147483648"));
 }*/

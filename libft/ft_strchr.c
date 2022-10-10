@@ -6,7 +6,7 @@
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 18:31:17 by zhlim             #+#    #+#             */
-/*   Updated: 2022/10/04 23:17:02 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/10/10 14:56:36 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s)
+	while (*s || c == '\0')
 	{
 		if (*s == c)
 			return ((char *)s);

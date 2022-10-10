@@ -6,7 +6,7 @@
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 16:10:26 by zhlim             #+#    #+#             */
-/*   Updated: 2022/10/05 16:33:15 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/10/10 17:57:53 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,6 +38,8 @@ char	*ft_strtrim(char const *s1, char const *set)
 	char	*ptr;
 	int		i;
 
+	if (!s1)
+		return (NULL);
 	res = (char *)malloc(sizeof(*s1) * (ft_count(s1, set) + 1));
 	if (!res)
 		return (NULL);
@@ -52,10 +54,11 @@ char	*ft_strtrim(char const *s1, char const *set)
 		*res++ = *s1;
 		s1++;
 	}
+	*res = '\0';
 	return (ptr);
 }
 
 /*int main(void)
 {
-    printf("%s\n", ft_strtrim("Hello--World--How--Are--You", "--"));
+    printf("%s\n", ft_strtrim("How-*Are-*You", "-*"));
 }*/

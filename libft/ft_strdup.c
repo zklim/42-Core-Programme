@@ -6,7 +6,7 @@
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:52:18 by zhlim             #+#    #+#             */
-/*   Updated: 2022/10/06 17:14:02 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/10/10 17:31:40 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,7 +21,7 @@ char	*ft_strdup(const char *s1)
 	i = 0;
 	while (s1[i])
 		i++;
-	dest = (char *)malloc(sizeof(*s1) * i);
+	dest = (char *)malloc(sizeof(*s1) * i + 1);
 	if (!dest)
 		return (0);
 	else

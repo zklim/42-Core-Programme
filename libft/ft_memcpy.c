@@ -6,7 +6,7 @@
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 15:50:57 by zhlim             #+#    #+#             */
-/*   Updated: 2022/10/04 23:16:56 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/10/10 15:11:51 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,17 +14,15 @@
 
 void	*ft_memcpy(void *restrict dst, const void *restrict src, size_t n)
 {
-	size_t		i;
-	const char	*s;
-	char		*d;
+	size_t	i;
 
-	s = src;
-	d = dst;
 	i = 0;
-	while (s[i] != '\0' && i < n)
+	if (!dst && !src)
+		return (0);
+	while (i < n)
 	{
-		d[i] = s[i];
+		((char *)dst)[i] = ((char *)src)[i];
 		i++;
 	}
-	return (d);
+	return (dst);
 }

@@ -6,13 +6,13 @@
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 13:13:06 by zhlim             #+#    #+#             */
-/*   Updated: 2022/10/06 13:14:18 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/10/10 14:39:41 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 
-int	isprint(int c)
+int	ft_isprint(int c)
 {
 	if (c >= 32 && c <= 126)
 		return (1);

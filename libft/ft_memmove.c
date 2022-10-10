@@ -6,33 +6,36 @@
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 15:59:39 by zhlim             #+#    #+#             */
-/*   Updated: 2022/10/04 23:16:58 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/10/10 15:43:42 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <string.h>
 
-//memmove uses tmp array to preserve src data.
-//so it will be "safe" when dst and src overlap.
-void	ft_memmove(void *dst, const void *src, size_t len)
+void	*ft_memmove(void *dst, const void *src, size_t len)
 {
-	size_t		i;
-	const char	*s;
-	char		*d;
-	char		tmp[1000];
+	size_t	i;
 
-	s = src;
-	d = dst;
 	i = 0;
-	while (s[i] && i < len)
+	if (!dst && !src)
+		return (0);
+	while (i < len)
 	{
-		tmp[i] = s[i];
+		if (dst > src)
+			((char *)dst)[len - i - 1] = ((char *)src)[len - i - 1];
+		else
+			((char *)dst)[i] = ((char *)src)[i];
 		i++;
 	}
-	i = 0;
-	while (tmp[i] && i < len)
-	{
-		d[i] = tmp[i];
-		i++;
-	}
+	return (dst);
 }
+
+/*int	main(void)
+{
+	char a[] = "Hello";
+	char b[] = "World";
+
+	ft_memmove(a, b, 10);
+	printf("%s\n", a);
+}*/

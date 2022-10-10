@@ -13,14 +13,7 @@ AR			= ar rc
 
 LIB			= ranlib
 
-CC			= cc
-
 RM			= rm -f
-
-CFLAGS		= -Wall -Wextra -Werror
-
-.c.o:
-			${CC} ${CFLAGS} -c -I. $< -o ${<:.c=.o}
 
 ${NAME}:	${OBJS}
 			${AR} ${NAME} ${OBJS}
