@@ -1,7 +1,11 @@
 
-SRCS		= ${wildcard ft_*.c}
+SRCS		= ${filter-out ${SRCSB}, ${wildcard ft*.c}}
+
+SRCSB		= ${wildcard ft_lst*.c}
 
 OBJS		= ${SRCS:.c=.o}
+
+OBJSB		= ${SRCSB:.c=.o}
 
 NAME		= libft.a
 
@@ -22,14 +26,18 @@ ${NAME}:	${OBJS}
 			${AR} ${NAME} ${OBJS}
 			${LIB} ${NAME}
 
+bonus:		${OBJS} ${OBJSB}
+			${AR} ${NAME} ${OBJS} ${OBJSB}
+			${LIB} ${NAME}
+
 all:		${NAME}
 
 clean:
-			${RM} ${OBJS}
+			${RM} ${OBJS} ${OBJSB}
 
 fclean:		clean
 			${RM} ${NAME}
 
 re:			fclean all
 
-.PHONY:		all clean fclean re
+.PHONY:		all clean fclean re bonus

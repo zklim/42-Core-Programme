@@ -6,7 +6,7 @@
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 14:55:50 by zhlim             #+#    #+#             */
-/*   Updated: 2022/10/10 08:48:05 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/10/10 10:01:25 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -26,6 +26,7 @@ t_list	*ft_lstnew(void *content)
 		new->next = NULL;
 		return (new);
 	}
+	return (0);
 }
 
 /*int main(void)
