@@ -9,6 +9,10 @@ OBJSB		= ${SRCSB:.c=.o}
 
 NAME		= libft.a
 
+CC			= gcc
+
+CFLAGS		= -Wall -Werror -Wextra -I.
+
 AR			= ar rc
 
 LIB			= ranlib
