@@ -6,7 +6,7 @@
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 17:56:09 by zhlim             #+#    #+#             */
-/*   Updated: 2022/10/06 21:38:09 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/10/12 15:39:29 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,8 @@
 
 t_list	*ft_lstlast(t_list *lst)
 {
+	if (!lst)
+		return (0);
 	while (lst->next)
 		lst = lst->next;
 	return (lst);

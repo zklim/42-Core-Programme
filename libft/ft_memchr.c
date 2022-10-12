@@ -6,15 +6,13 @@
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 18:51:02 by zhlim             #+#    #+#             */
-/*   Updated: 2022/10/05 13:01:53 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/10/12 16:34:46 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <string.h>
 
-//memchr does not terminate with NULL.
-//so it requires length to terminate.
 void	*ft_memchr(const void *s, int c, size_t n)
 {
 	char	*_s;

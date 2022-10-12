@@ -6,7 +6,7 @@
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 18:01:00 by zhlim             #+#    #+#             */
-/*   Updated: 2022/10/10 08:45:30 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/10/12 15:43:29 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,17 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
-	while ((*lst)->next && new)
-		*lst = (*lst)->next;
-	(*lst)->next = new;
+	if (new)
+	{
+		if (!*lst)
+			*lst = new;
+		else
+		{
+			while ((*lst)->next && new)
+				*lst = (*lst)->next;
+			(*lst)->next = new;
+		}
+	}
 }
 
 /*int main(void)

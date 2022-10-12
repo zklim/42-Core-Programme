@@ -6,7 +6,7 @@
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 17:27:19 by zhlim             #+#    #+#             */
-/*   Updated: 2022/10/06 00:33:55 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/10/12 15:32:28 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,6 +33,8 @@ char	*ft_strmapi(char const *s, char (*f)(unsigned int, char))
 	int		i;
 
 	i = 0;
+	if (!s || !f)
+		return (NULL);
 	count = ft_strlen(s);
 	res = (char *)malloc(sizeof(*res) * (count + 1));
 	if (!res)

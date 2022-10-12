@@ -6,7 +6,7 @@
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 17:58:48 by zhlim             #+#    #+#             */
-/*   Updated: 2022/10/06 14:49:08 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/10/12 15:35:45 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,9 +14,12 @@
 
 void	ft_putstr_fd(char const *s, int fd)
 {
-	while (*s)
+	if (s)
 	{
-		write(fd, s, 1);
-		s++;
+		while (*s)
+		{
+			write(fd, s, 1);
+			s++;
+		}
 	}
 }
