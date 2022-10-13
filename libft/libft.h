@@ -6,7 +6,7 @@
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 13:04:40 by zhlim             #+#    #+#             */
-/*   Updated: 2022/10/10 14:40:02 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/10/13 15:33:21 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void				*ft_memchr(const void *s, int c, size_t n);
 int					ft_memcmp(const void *s1, const void *s2, size_t n);
 void				*ft_memcpy(void *restrict dst, const void *restrict src,
 						size_t n);
-void				ft_memmove(void *dst, const void *src, size_t len);
+void				*ft_memmove(void *dst, const void *src, size_t len);
 void				*ft_memset(void *b, int c, size_t len);
 void				ft_putchar_fd(char c, int fd);
 void				ft_putendl_fd(char const *s, int fd);
