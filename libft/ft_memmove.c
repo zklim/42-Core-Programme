@@ -6,7 +6,7 @@
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 15:59:39 by zhlim             #+#    #+#             */
-/*   Updated: 2022/10/10 15:43:42 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/10/13 15:17:08 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,9 @@ void	*ft_memmove(void *dst, const void *src, size_t len)
 {
 	char a[] = "Hello";
 	char b[] = "World";
+	char	*c;
 
-	ft_memmove(a, b, 10);
-	printf("%s\n", a);
+	c = (char *)ft_memmove(a, b, 10);
+	printf("%s\n", c);
+	printf("%p\n%p\n", c, a);
 }*/

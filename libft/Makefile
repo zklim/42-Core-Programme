@@ -1,11 +1,11 @@
 
-SRCS		= ${filter-out ${SRCSB}, ${wildcard ft*.c}}
+SRCS		= $(filter-out $(SRCSB), $(wildcard ft*.c))
 
-SRCSB		= ${wildcard ft_lst*.c}
+SRCSB		= $(wildcard ft_lst*.c)
 
-OBJS		= ${SRCS:.c=.o}
+OBJS		= $(SRCS:.c=.o)
 
-OBJSB		= ${SRCSB:.c=.o}
+OBJSB		= $(SRCSB:.c=.o)
 
 NAME		= libft.a
 
@@ -19,21 +19,21 @@ LIB			= ranlib
 
 RM			= rm -f
 
-${NAME}:	${OBJS}
-			${AR} ${NAME} ${OBJS}
-			${LIB} ${NAME}
+$(NAME):	$(OBJS)
+			$(AR) $(NAME) $(OBJS)
+			$(LIB) $(NAME)
 
-bonus:		${OBJS} ${OBJSB}
-			${AR} ${NAME} ${OBJS} ${OBJSB}
-			${LIB} ${NAME}
+bonus:		$(OBJS) $(OBJSB)
+			$(AR) $(NAME) $(OBJS) $(OBJSB)
+			$(LIB) $(NAME)
 
-all:		${NAME}
+all:		$(NAME)
 
 clean:
-			${RM} ${OBJS} ${OBJSB}
+			$(RM) $(OBJS) $(OBJSB)
 
 fclean:		clean
-			${RM} ${NAME}
+			$(RM) $(NAME)
 
 re:			fclean all
 

@@ -6,7 +6,7 @@
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/06 18:01:00 by zhlim             #+#    #+#             */
-/*   Updated: 2022/10/12 15:43:29 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/10/13 15:00:33 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,15 +14,16 @@
 
 void	ft_lstadd_back(t_list **lst, t_list *new)
 {
+	t_list	*tmp;
+
 	if (new)
 	{
 		if (!*lst)
 			*lst = new;
 		else
 		{
-			while ((*lst)->next && new)
-				*lst = (*lst)->next;
-			(*lst)->next = new;
+			tmp = ft_lstlast(*lst);
+			tmp->next = new;
 		}
 	}
 }
@@ -32,14 +33,32 @@ void	ft_lstadd_back(t_list **lst, t_list *new)
     t_list  a;
     t_list  b;
     t_list  c;
-    t_list  d;
+    t_list  elem;
+    t_list  elem1;
+    t_list  elem2;
+    t_list  elem3;
     t_list  *ptr;
 
     a.next = &b;
     b.next = &c;
-    d.content = "addlast";
+    elem.content = "abc";
+    elem1.content = "babc";
+    elem2.content = "cabc";
+    elem3.content = "dabc";
+    elem.next = NULL;
+    elem1.next = NULL;
+    elem2.next = NULL;
+    elem3.next = NULL;
     ptr = &a;
-    printf("%p\n", a.next->next->next);
-    ft_lstadd_back(&ptr, &d);
-    printf("%s\n", (char *)a.next->next->next->content);
+	{
+		ft_lstadd_back(&ptr, &elem);
+		ft_lstadd_back(&ptr, &elem1);
+		ft_lstadd_back(&ptr, &elem2);
+		ft_lstadd_back(&ptr, &elem3);
+		while (ptr)
+		{
+			printf("%s\n", ((char *)ptr->content));
+			ptr = ptr->next;
+		}
+	}
 }*/
