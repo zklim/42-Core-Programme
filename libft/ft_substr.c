@@ -6,7 +6,7 @@
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:58:25 by zhlim             #+#    #+#             */
-/*   Updated: 2022/10/10 17:39:03 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/10/13 18:06:10 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,8 +22,10 @@ char	*ft_substr(char const *s, unsigned int start, size_t len)
 	i = 0;
 	if (!s)
 		return (NULL);
-	if ((size_t)start >= ft_strlen(s))
+	else if ((size_t)start >= ft_strlen(s))
 		return (ft_strdup(""));
+	else if (len > ft_strlen(s))
+		len = ft_strlen(s);
 	ptr = (char *)malloc(sizeof(*s) * (len + 1));
 	if (!ptr)
 		return (NULL);

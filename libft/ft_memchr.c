@@ -6,7 +6,7 @@
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 18:51:02 by zhlim             #+#    #+#             */
-/*   Updated: 2022/10/12 16:34:46 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/10/13 17:42:02 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ void	*ft_memchr(const void *s, int c, size_t n)
 	_s = (char *)s;
 	while (n)
 	{
-		if (*_s == c)
+		if (*_s == (char)c)
 			return (_s);
 		_s++;
 		n--;

@@ -6,7 +6,7 @@
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 18:11:57 by zhlim             #+#    #+#             */
-/*   Updated: 2022/10/10 15:00:53 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/10/13 17:43:22 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strrchr(const char *s, int c)
 	res = NULL;
 	while (*s || c == '\0')
 	{
-		if (*s == c)
+		if (*s == (char)c)
 		{
 			res = (char *)s;
 			if (c == '\0')

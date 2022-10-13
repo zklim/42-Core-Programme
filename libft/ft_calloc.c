@@ -6,7 +6,7 @@
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:46:24 by zhlim             #+#    #+#             */
-/*   Updated: 2022/10/11 14:28:01 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/10/13 18:06:42 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,8 @@ void	*ft_calloc(size_t count, size_t size)
 	int		total;
 	int		i;
 
+	if (count == SIZE_MAX || size == SIZE_MAX)
+		return (NULL);
 	total = count * size;
 	i = 0;
 	ptr = (void *)malloc(total);
