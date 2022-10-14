@@ -6,12 +6,13 @@
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 14:46:24 by zhlim             #+#    #+#             */
-/*   Updated: 2022/10/13 18:06:42 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/10/14 14:44:17 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 #include <stdio.h>
+#include <stdint.h>
 #include <stdlib.h>
 
 void	*ft_calloc(size_t count, size_t size)
