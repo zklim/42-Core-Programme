@@ -6,7 +6,7 @@
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 13:08:38 by zhlim             #+#    #+#             */
-/*   Updated: 2022/10/15 15:52:51 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/10/15 17:36:23 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,7 +20,7 @@ char	*ft_strnstr(const char *haystack, const char *needle, size_t len)
 
 	if (needle[0] == '\0')
 		return ((char *)haystack);
-	else if (len == 0)
+	else if (!haystack && len == 0)
 		return ("");
 	i = 0;
 	while (haystack[i] && i < len)
