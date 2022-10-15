@@ -6,7 +6,7 @@
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/07 00:15:53 by zhlim             #+#    #+#             */
-/*   Updated: 2022/10/12 15:43:59 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/10/15 12:06:56 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,12 +15,15 @@
 
 void	ft_lstclear(t_list **lst, void (*del)(void *))
 {
+	t_list	*tmp;
+
 	if (lst && del)
 	{
 		while (*lst && del)
 		{
+			tmp = (*lst)->next;
 			ft_lstdelone(*lst, del);
-			*lst = (*lst)->next;
+			*lst = tmp;
 		}
 	}
 }
