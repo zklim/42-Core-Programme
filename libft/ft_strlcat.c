@@ -6,7 +6,7 @@
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/03 17:12:46 by zhlim             #+#    #+#             */
-/*   Updated: 2022/10/15 18:57:12 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/10/16 00:12:48 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,7 +25,6 @@ size_t	ft_strlcat(char *restrict dst, const char *restrict src, size_t dstsize)
 	j = ft_strlen(dst);
 	if (dstsize <= j)
 		return (dstsize + ft_strlen(src));
-
 	while (src[i] && j < dstsize - 1)
 	{
 		dst[j] = src[i];
