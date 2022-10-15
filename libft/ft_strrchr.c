@@ -6,7 +6,7 @@
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/04 18:11:57 by zhlim             #+#    #+#             */
-/*   Updated: 2022/10/15 15:21:23 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/10/15 15:23:31 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -23,7 +23,7 @@ char	*ft_strrchr(const char *s, int c)
 		if (*s == (char)c)
 		{
 			res = (char *)s;
-			if (c == '\0')
+			if ((char)c == '\0')
 				return (res);
 		}
 		s++;
