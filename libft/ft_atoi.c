@@ -6,7 +6,7 @@
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 13:36:26 by zhlim             #+#    #+#             */
-/*   Updated: 2022/10/15 15:49:47 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/10/15 16:12:54 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,9 +34,9 @@ int	ft_atoi(const char *str)
 	{
 		res = (res * 10) + (*str++ - '0');
 		i++;
-		if (i > 10 && sign > 0)
+		if (i >= 20 && sign > 0)
 			return (-1);
-		else if (i > 10 && sign < 0)
+		else if (i >= 20 && sign < 0)
 			return (0);
 	}
 	return (res * sign);
