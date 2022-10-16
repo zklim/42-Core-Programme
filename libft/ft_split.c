@@ -6,7 +6,7 @@
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/05 16:10:17 by zhlim             #+#    #+#             */
-/*   Updated: 2022/10/12 15:31:59 by zhlim            ###   ########.fr       */
+/*   Updated: 2022/10/16 13:00:19 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -44,7 +44,6 @@ static char	*ft_dup(const char *s1, int start, int finish)
 	res = (char *)malloc(sizeof(*s1) * (finish - start + 1));
 	if (!res)
 		return (0);
-	i = 0;
 	while (start < finish)
 		res[i++] = s1[start++];
 	res[i] = '\0';
