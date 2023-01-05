@@ -6,7 +6,7 @@
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 14:18:11 by zhlim             #+#    #+#             */
-/*   Updated: 2023/01/05 17:11:14 by zhlim            ###   ########.fr       */
+/*   Updated: 2023/01/05 22:17:00 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,7 +15,7 @@
 #include <stdio.h>
 #include <unistd.h>
 
-void	check_char(char c, va_list *ap, int *i)
+void	check_flag(char c, va_list *ap, int *i)
 {
 	if (c == 'c')
 		put_char(ap, i);
@@ -47,7 +47,7 @@ int	ft_print(const char *str, va_list *ap)
 			if (*str == '%')
 			{
 				str++;
-				check_char(*str, ap, &i);
+				check_flag(*str, ap, &i);
 				str++;
 			}
 			else
