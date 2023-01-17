@@ -6,7 +6,7 @@
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 14:18:11 by zhlim             #+#    #+#             */
-/*   Updated: 2023/01/05 22:17:00 by zhlim            ###   ########.fr       */
+/*   Updated: 2023/01/16 21:55:50 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -71,15 +71,3 @@ int	ft_printf(const char *str, ...)
 	va_end(ap);
 	return (count);
 }
-
-// int	main(void)
-// {
-// 	int i;
-// 	char c;
-// 	char str[] = "World";
-
-// 	c = 'a';
-// 	i = 2147369648;
-// 	printf("%d ", printf(" %x \n", 9223372036854775807L*2UL+1UL));
-// 	printf("%d ", ft_printf(" %x \n", 9223372036854775807L*2UL+1UL));
-// }
