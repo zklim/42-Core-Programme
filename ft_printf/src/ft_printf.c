@@ -6,7 +6,7 @@
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 14:18:11 by zhlim             #+#    #+#             */
-/*   Updated: 2023/01/16 21:55:50 by zhlim            ###   ########.fr       */
+/*   Updated: 2023/02/22 13:37:00 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,7 +35,7 @@ void	check_flag(char c, va_list *ap, int *i)
 		ft_putchar('%', i);
 }
 
-int	ft_print(const char *str, va_list *ap)
+int	print_str(const char *str, va_list *ap)
 {
 	int	i;
 
@@ -67,7 +67,7 @@ int	ft_printf(const char *str, ...)
 	int		count;
 
 	va_start(ap, str);
-	count = ft_print(str, &ap);
+	count = print_str(str, &ap);
 	va_end(ap);
 	return (count);
 }

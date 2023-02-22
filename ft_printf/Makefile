@@ -17,7 +17,7 @@ RM			= rm -f
 LIBFT		= libft.a
 
 $(NAME):	$(LIBFT) $(OBJS)
-			$(AR) $(NAME) $(OBJS) libft/$(LIBFT)
+			$(AR) $(NAME) $(OBJS)
 			$(LIB) $(NAME)
 
 $(LIBFT):	

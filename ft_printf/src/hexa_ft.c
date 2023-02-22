@@ -6,7 +6,7 @@
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/01/05 14:22:34 by zhlim             #+#    #+#             */
-/*   Updated: 2023/01/05 17:09:10 by zhlim            ###   ########.fr       */
+/*   Updated: 2023/02/22 13:37:49 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -33,17 +33,9 @@ void	put_add(va_list *ap, int *i)
 	size_t	add;
 
 	add = va_arg(*ap, size_t);
-	if (!add)
-	{
-		write(1, "(nil)", 5);
-		(*i) += 5;
-	}
-	else
-	{
-		write(1, "0x", 2);
-		(*i) += 2;
-		ft_putnub_hexa(add, i);
-	}
+	write(1, "0x", 2);
+	(*i) += 2;
+	ft_putnub_hexa(add, i);
 }
 
 void	put_hexa(va_list *ap, int *i)

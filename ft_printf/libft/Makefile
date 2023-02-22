@@ -1,4 +1,3 @@
-
 SRCS		= $(filter-out $(SRCSB), $(wildcard ft*.c))
 
 SRCSB		= $(wildcard ft_lst*.c)
