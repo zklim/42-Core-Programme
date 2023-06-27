@@ -14,14 +14,9 @@ LIB			= ranlib
 
 RM			= rm -f
 
-LIBFT		= libft.a
-
-$(NAME):	$(LIBFT) $(OBJS)
+$(NAME):	$(OBJS) 
 			$(AR) $(NAME) $(OBJS)
 			$(LIB) $(NAME)
-
-$(LIBFT):	
-			make -C libft/
 
 all:		$(NAME)
 

@@ -1,23 +1,23 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstiter.c                                       :+:      :+:    :+:   */
+/*   push_swap.h                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2022/10/07 16:55:48 by zhlim             #+#    #+#             */
-/*   Updated: 2022/10/16 12:34:25 by zhlim            ###   ########.fr       */
+/*   Created: 2023/06/27 14:37:03 by zhlim             #+#    #+#             */
+/*   Updated: 2023/06/27 14:40:00 by zhlim            ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
-#include <stdlib.h>
+#ifndef PUSH_SWAP_H
+# define PUSH_SWAP_H
 
-void	ft_lstiter(t_list *lst, void (*f)(void *))
-{
-	while (lst && f)
-	{
-		(f)(lst->content);
-		lst = lst->next;
-	}
-}
+# include <unistd.h>
+# include "libft/libft.h"
+# include "ft_printf/include/ft_printf.h"
+
+
+
+
+#endif
