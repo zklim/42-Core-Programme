@@ -6,7 +6,7 @@
 #    By: zhlim <zhlim@student.42kl.edu.my>          +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2023/07/09 15:22:50 by zhlim             #+#    #+#              #
-#    Updated: 2023/07/25 16:49:30 by zhlim            ###   ########.fr        #
+#    Updated: 2023/08/15 13:48:41 by zhlim            ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -76,4 +76,8 @@ re:				fclean all
 
 rebonus:		fclean bonus
 
+<<<<<<< HEAD
 .PHONY:			all clean fclean re rebonus
+=======
+.PHONY:			all clean fclean rebonus
+>>>>>>> a5223621cb460935c2f16cddd6f14cea0ad80ef9
